@@ -25,11 +25,17 @@ const App = () => {
     const data = await response.json();
 
     setRecipes(data.hits);
-    console.log(data.hits)
+    console.log(data.hits);
+    
   }
 
   const getSearch = (e) => {
     e.preventDefault();
+    
+    if (search.length === 0 || !search.trim()) {
+      return
+    }
+
     setQuery(search);
     setSearch("")
   }
@@ -37,8 +43,11 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={getSearch} className="search-form">
-      <input className="search-bar" type="text" onChange={updateSearch} value={search} />
-      <button className="search-button" type="submit">Search</button>
+      <h1>Nom Nom Nom...</h1>
+      <div>
+        <input className="search-bar" type="text" onChange={updateSearch} value={search} placeholder="Search for a recipe..." />
+        <button className="search-button" type="submit">Search</button>
+      </div>
       </form>
       <div className="main">
       {recipes.map((recipe, idx) => (
@@ -48,7 +57,8 @@ const App = () => {
         calories={recipe.recipe.calories}
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredientLines}
-         />
+        link={recipe.recipe.url}
+        />
       ))}
       </div>
     </div>

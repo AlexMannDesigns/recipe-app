@@ -1,10 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  background-color: #cad2c5;
+  padding-top: 75px;
 }
+
+/* Navigation menu */
+
+.search-form {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  padding: 10px 30px;
+  background-color: #354f52;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(47, 62, 70, 0.5);
+}
+
+.search-form h1 {
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.search-bar {
+  margin: 0 10px;
+  padding: 3px;
+  border-radius: 5px;
+  height: 45px;
+  font-family: inherit;
+  font-size: 1.4rem;
+  border: 0;
+}
+
+.search-button {
+  height: 45px;
+  padding: 0 10px;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #84a98c;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+}
+
+.search-button:hover {
+  cursor: pointer;
+  background-color: #cad2c5;
+}
+
+/* Recipe display section */
 
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+/* Media queries */
+
+@media (max-width: 600px) {
+  .App {
+    padding-top: 125px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .search-form h1 {
+    font-size: 2.5rem;
+  }
 }
