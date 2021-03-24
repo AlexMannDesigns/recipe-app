@@ -10,9 +10,9 @@ const Recipe = (props) => {
                 <li>{ingredient}</li>
             ))}
         </ul>
-        <p>calories: {Math.floor(props.calories)}</p>
+        <p>Total calories: {Math.floor(props.calories)}</p>
         <div>
-        <a target="_blank" href={props.link}>Click here to view the full recipe!</a>
+        <a className={style.link} target="_blank" href={props.link}>Click here to view the full recipe!</a>
         <img className={style.image} alt="" src={props.image}/>
         </div>
         
